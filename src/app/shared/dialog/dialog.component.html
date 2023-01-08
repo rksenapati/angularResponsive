@@ -1,0 +1,98 @@
+<form [formGroup]="booksForm" (ngSubmit)="submit()">
+<div class="modal-header">
+  <h5 class="modal-title">Add New Book</h5>
+</div>
+<div class="modal-body">  
+    <div class="form-group">
+      <label>Title</label>
+      <input
+        type="text"
+        class="form-control mt-1"
+        placeholder="Enter Title"
+        formControlName="title"
+      />
+      <small
+        class="form-text text-danger"
+        *ngIf="
+          form['title'].errors && (form['title'].dirty || form['title'].touched)
+        "
+        ><ng-container *ngIf="form['title'].errors['required']"
+          >This field is required</ng-container
+        ></small
+      >
+    </div>
+    <div class="form-group">
+      <label>Publish Date</label>
+      <input
+        type="text"
+        class="form-control mt-1"
+        placeholder="Enter Publish Date"
+        formControlName="PublishDate"
+      />
+      <small
+        class="form-text text-danger"
+        *ngIf="
+          form['PublishDate'].errors &&
+          (form['PublishDate'].dirty || form['PublishDate'].touched)
+        "
+        ><ng-container *ngIf="form['PublishDate'].errors['required']"
+          >This field is required</ng-container
+        ></small
+      >
+    </div>
+    <div class="form-group">
+      <label>Purchase Link</label>
+      <input
+        type="text"
+        class="form-control mt-1"
+        placeholder="Enter Purchase Link"
+        formControlName="purchaseLink"
+      />
+      <small
+        class="form-text text-danger"
+        *ngIf="
+          form['purchaseLink'].errors &&
+          (form['purchaseLink'].dirty || form['purchaseLink'].touched)
+        "
+        ><ng-container *ngIf="form['purchaseLink'].errors['required']"
+          >This field is required</ng-container
+        ></small
+      >
+    </div>
+    <div class="form-group">
+      <label>Image URL</label>
+      <input
+        type="text"
+        class="form-control mt-1"
+        placeholder="Enter Image URL"
+        formControlName="imageUrl"
+      />
+      <small
+        class="form-text text-danger"
+        *ngIf="
+          form['imageUrl'].errors &&
+          (form['imageUrl'].dirty || form['imageUrl'].touched)
+        "
+        ><ng-container *ngIf="form['imageUrl'].errors['required']"
+          >This field is required</ng-container
+        ></small
+      >
+    </div>
+</div>
+<div class="modal-footer">
+  <div class="text-center">
+    <button class="btn btn-primary btn-sm me-3" (click)="cancel(false)">
+      Cancel
+      <!-- Cancel -->
+    </button>
+    <button
+      class="btn btn-success btn-sm me-3"
+      type="submit"
+      [disabled]="!booksForm.valid"
+    >
+      Save
+      <!-- Finalize Configuration -->
+    </button>
+  </div>
+</div>
+</form>

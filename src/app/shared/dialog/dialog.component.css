@@ -1,0 +1,25 @@
+/* .modal-header {
+    color: #ffffff;
+    background-color: #006e74;
+    font-size: 20px;
+    margin-bottom: 0;
+    padding: 10px 15px;
+  }
+  .card-text {
+    color: #030303;
+    font-size: 16px;
+    margin-bottom: 0px;
+    line-height: 25px;
+  }
+  ::ng-deep .modal-dialog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+    min-height: calc(100vh - 60px);
+  }
+  @media (max-width: 767px) {
+    ::ng-deep .modal-dialog {
+      min-height: calc(100vh - 20px);
+    }
+  } */

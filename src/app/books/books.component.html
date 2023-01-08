@@ -1,0 +1,10 @@
+<div class="container-fluid mt-2">
+  <div class="card">
+    <div class="card-header">
+      <app-books-author [autherDetails]="autherDetailsData"></app-books-author>
+    </div>
+    <div class="card-body">
+        <app-books-list [booksList]="booksListData" (sortNumber)="sortBooksList($event)" (sendDialogData)="getFormData($event)"></app-books-list>
+    </div>
+  </div>
+</div>

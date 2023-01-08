@@ -1,0 +1,48 @@
+<div class="list" *ngIf="booksList && booksList.length">
+  <div class="row mb-3 sorting-section">
+    <div class="col-3">
+      <button type="button" class="btn btn-success" (click)="sortChange()">
+        <i class="fa fa-sort" *ngIf="sortIndex == 0"></i>
+        <i class="fa fa-sort-asc" *ngIf="sortIndex == 1"></i>
+        <i class="fa fa-sort-desc" *ngIf="sortIndex == 2"></i>
+      </button>
+    </div>
+    <div class="col-3"></div>
+    <div class="col-6" style="text-align: right">
+      <button type="button" class="btn btn-success" (click)="AddNewBooks()">
+        Add New
+      </button>
+    </div>
+  </div>
+  <div
+    class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 g-3 list-section"
+  >
+    <div class="col details" *ngFor="let book of booksList">
+      <div class="card">
+        <img class="card-img-top" [src]="book.imageUrl" />
+        <div class="card-body">
+          <h5 class="card-title">{{ book.title }}</h5>
+          <h6 class="card-title">{{ book.PublishDate }}</h6>
+        </div>
+        <div class="card-footer">
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button
+              type="button"
+              class="btn btn-success"
+              (click)="editList(book)"
+            >
+              Edit
+            </button>
+            <a
+              type="button"
+              class="btn btn-secondary"
+              [href]="book.purchaseLink"
+              target="_blank"
+              >Buy Now</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
